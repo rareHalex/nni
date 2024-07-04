@@ -113,7 +113,7 @@ class WsConnection:
         # seems the library will inference whether it's text or binary, so we don't have guarantee
         if isinstance(msg, bytes):
             msg = msg.decode()
-        return nni.load(msg)
+        return nni.load(msg,ignore_comments=False)
 
 def _wait(coro):
     # Synchronized version of "await".
